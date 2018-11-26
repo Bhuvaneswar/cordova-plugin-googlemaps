@@ -163,7 +163,7 @@
                   // Result for JS
                   //---------------------------
                   NSMutableDictionary *result = [[NSMutableDictionary alloc] init];
-                  [result setObject:groundOverlayId forKey:@"id"];
+                  [result setObject:groundOverlayId forKey:@"__pgmId"];
 
                   CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsDictionary:result];
                   [self_.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
@@ -195,8 +195,8 @@
              * Base64 icon
              */
             NSArray *tmp = [urlStr componentsSeparatedByString:@","];
+            NSData *decodedData = [[NSData alloc] initWithBase64EncodedString:[tmp objectAtIndex:1] options:0];
 
-            NSData *decodedData = [NSData dataFromBase64String:tmp[1]];
             image = [[UIImage alloc] initWithData:decodedData];
 
         } else {

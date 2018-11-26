@@ -1,8 +1,9 @@
 <?xml version='1.0' encoding='utf-8'?>
-<plugin id="cordova-plugin-googlemaps" version="2.4.6" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+<plugin id="cordova-plugin-googlemaps" version="2.5.0-beta-20181020-1803" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
   <name>cordova-plugin-googlemaps</name>
   <js-module name="Promise" src="www/Promise.js" />
   <asset src="www/promise-7.0.4.min.js.map" target="promise-7.0.4.min.js.map" />
+  <asset src="www/promise-7.0.4.min.js.map" target="plugins/cordova-plugin-googlemaps/www/promise-7.0.4.min.js.map" />
   <js-module name="BaseClass" src="www/BaseClass.js">
     <runs/>
   </js-module>
@@ -78,6 +79,9 @@
   <js-module name="KmlLoader" src="www/KmlLoader.js">
     <runs/>
   </js-module>
+  <js-module name="FusionTableOverlay" src="www/FusionTableOverlay.js">
+    <runs/>
+  </js-module>
   <js-module name="Environment" src="www/Environment.js">
     <runs/>
   </js-module>
@@ -117,7 +121,7 @@
   <issue>https://github.com/mapsplugin/cordova-plugin-googlemaps/issues</issue>
   <author>Masashi Katsumata, Hirbod</author>
 
-  <license>Apache 2.0</license>
+  <license>Apache-2.0</license>
 
   <keywords>google,maps,geo</keywords>
 
@@ -267,6 +271,8 @@
 
     <!-- Base messages -->
     <resource-file src="src/android/res/values/pgm_strings.xml" target="res/values/pgm_strings.xml"/>
+    <!-- localized messages for Spanish -->
+    <resource-file src="src/android/res/values-es/pgm_strings.xml" target="res/values-es/pgm_strings.xml"/>
     <!-- localized messages for Japanese -->
     <resource-file src="src/android/res/values-ja/pgm_strings.xml" target="res/values-ja/pgm_strings.xml"/>
     <!-- localized messages for Russian -->
@@ -392,9 +398,6 @@
     <source-file src="src/ios/GoogleMaps/TBXML.m"/>
     <header-file src="src/ios/GoogleMaps/PluginTileOverlay.h"/>
     <source-file src="src/ios/GoogleMaps/PluginTileOverlay.m"/>
-    <header-file src="src/ios/GoogleMaps/NSData-Base64/NSData+Base64.h"/>
-    <header-file src="src/ios/GoogleMaps/NSData-Base64/NSData+Base64.podspec"/>
-    <source-file src="src/ios/GoogleMaps/NSData-Base64/NSData+Base64.m"/>
     <header-file src="src/ios/GoogleMaps/MFGoogleMapAdditions/GMSCoordinateBounds+Geometry.h"/>
     <source-file src="src/ios/GoogleMaps/MFGoogleMapAdditions/GMSCoordinateBounds+Geometry.m"/>
     <header-file src="src/ios/GoogleMaps/MyPluginLayer.h"/>
@@ -416,6 +419,8 @@
 
     <!-- Base messages -->
     <resource-file src="src/ios/strings/pgm_Localizable_en.json" target="pgm_Localizable_en.json"/>
+    <!-- localized messages for Spanish -->
+    <resource-file src="src/ios/strings/pgm_Localizable_es.json" target="pgm_Localizable_es.json"/>
     <!-- localized messages for Japanese -->
     <resource-file src="src/ios/strings/pgm_Localizable_ja.json" target="pgm_Localizable_ja.json"/>
     <!-- localized messages for Russian -->
@@ -534,6 +539,9 @@
       <runs/>
     </js-module>
     <js-module name="PluginEnvironment" src="src/browser/PluginEnvironment.js">
+      <runs/>
+    </js-module>
+    <js-module name="PluginFusionTableOverlay" src="src/browser/PluginFusionTableOverlay.js">
       <runs/>
     </js-module>
   </platform>
